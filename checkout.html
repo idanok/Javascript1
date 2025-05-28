@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Please fill in shipping information and 
+    you preferred payment method to complete your order.">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Ida Nøkland">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="checkout.css">
+    <script defer src="checkout.js"></script>
+    <title>Checkout page</title>
+</head>
+
+<body>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <header class="small-header">
+        <P>BIG WINTER SALE!</P>
+        <P>UP TO 50% DISCOUNT</P>
+        <P>SALE ENDS 29TH OF FEBRUARY</P>
+    </header>
+
+    <header>
+        <a href="index.html">
+            <section class="logo">
+                <img src="img/logo.png" alt="blue logo with mountains at the top, rainy days text in capital letters in the middle
+                and the text: Pushing the comfort zone, underneath">
+            </section>
+        </a>
+
+        <section class="bar-container">
+            <a href="checkout.html">
+                <section class="shopping-cart">
+                    <img src="img/shopping-cart.png" alt="hollow black shopping bag icon">
+                </section>
+            </a>
+
+            <nav id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <nav class="overlay-content">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="document.html">Document</a>
+                </nav>
+            </nav>
+
+            <span class="menu-icon" onclick="openNav()">&#9776;</span>
+
+            <script src="script.js"></script>
+        </div>
+    </header>
+
+    <hr class="header-line">
+    <main class="content"></main>
+
+    <main class="shipping-information-card">
+        <section class="shipping-information">
+            <h1>SHIPPING INFORMATION</h1>
+            <input placeholder="Full name:">
+            <input placeholder="Last name:">
+            <input placeholder="Email:">
+            <input placeholder="Phone number:">
+            <input placeholder="Country:">
+            <input placeholder="Street adress:">
+            <section class="horizontally-aligned">
+                <input placeholder="Postcode:">
+                <input placeholder="City:">
+            </section>
+        </section>
+    </main>
+
+    <section class="payment-method-card">
+        <h2>PAYMENT METHOD</h2>
+        <section class="credit-card-container">
+            <button>
+                <span>Credit card</span>
+                <img src="img/visa.png" class="card-image" alt="blue visa icon">
+                <img src="img/mastercard.png" class="card-image"
+                    alt="white mastercard icon with one red and one orange circle">
+            </button>
+        </section>
+        <section class="paypal-container">
+            <button>
+                <span>Paypal</span>
+                <img src="img/paypal.png" class="paypal-image" alt="blue PayPal icon">
+            </button>
+        </section>
+        <section class="klarna-container">
+            <button>
+                <span>Klarna</span>
+                <img src="img/klarna.png" class="klarna-image" alt="black Klarna icon">
+            </button>
+        </section>
+    </section>
+
+    <section class="order-summary-card">
+        <section class="order-summary">
+            <h3>ORDER SUMMARY</h3>
+            <section class="horizontally-aligned">
+                <p>Items</p>
+                <section class="edit-cart-container">
+                    <img src="img/edit-cart.png" alt="black pen icon">
+                    <p>Edit Cart</p>
+                </section>
+            </section>
+        </section>
+        <section class="rain-jacket">
+            <section class="rain-jacket-content">
+            
+                <section class="rain-jacket-details">
+                    <h4>AMAZE BOMBSHELL JACKET</h4>
+                    <p>$ 129.00</p>
+                    <p>Size: M</p>
+                    <p>Qty: 1</p>
+                </section>
+            </section>
+        </section>
+        <section class="sub-total">
+            <p>Subtotal</p>
+            <p>$ 129.00</p>
+        </section>
+        <section class="order-total">
+            <p>Order total</p>
+            <p>$ 129.00</p>
+        </section>
+    </section>
+    
+    <button class="complete-order">
+    <a href="checkoutSuccess.html">
+        <button class="complete-order-button">COMPLETE ORDER</button>
+    </a>
+    </button>
+
+    <footer class="site-footer">
+        <section class="footer-content">
+            <section class="logo">
+                <img src="img/logo.png" alt="white logo with mountains at the top, rainy days text in capital letters in the middle
+                and the text: Pushing the comfort zone, underneath">
+            </section>
+
+            <section class="membership">
+                <h3>Become a member</h3>
+                <p>Sign up for our newsletter and<br>get special offers and discounts<br></p>
+                <section class="signup-container">
+                    <input placeholder="Email:">
+                    <button>Sign Up</button>
+                </section>
+            </section>
+
+            <nav class="social-icons">
+                <a href="#"><img src="img/instagram.png" alt="pink and yellow instagram icon"></a>
+                <a href="#"><img src="img/twitter.png" alt="twitter icon that is a blue bird"></a>
+                <a href="#"><img src="img/tiktok.png" alt="tik tok icon that is black with a white musical note"></a>
+            </nav>
+        </section>
+    </footer>
+</body>
+
+</html>

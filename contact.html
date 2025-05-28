@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="If you want to contact us, please fill in
+    our contact form. You may also give us a call at: 12 345 678 or email us at: 
+    RainyDays@hotmail.com. Feel free to also check out our social media.">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Ida Nøkland">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact.css">
+    <script defer src="contact.js"></script>
+    <title>Contact page</title>
+</head>
+
+<body>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <header class="small-header">
+        <P>BIG WINTER SALE!</P>
+        <P>UP TO 50% DISCOUNT</P>
+        <P>SALE ENDS 29TH OF FEBRUARY</P>
+    </header>
+
+    <header>
+        <a href="index.html">
+            <section class="logo">
+                <img src="img/logo.png" alt="blue logo with mountains at the top, rainy days text in capital letters in the middle
+                and the text: Pushing the comfort zone, underneath">
+            </section>
+        </a>
+
+        <section class="bar-container">
+            <a href="checkout.html">
+                <section class="shopping-cart">
+                    <img src="img/shopping-cart.png" alt="hollow black shopping bag icon">
+                </section>
+            </a>
+
+            <nav id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <nav class="overlay-content">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="document.html">Document</a>
+                </nav>
+            </nav>
+
+            <span class="menu-icon" onclick="openNav()">&#9776;</span>
+
+            <script src="script.js"></script>
+        </section>
+    </header>
+
+    <hr class="header-line">
+
+    <main class="content"></main>
+
+    <main>
+        <section class="contact-form">
+            <h1>CONTACT US</h1>
+            <input placeholder="Full name:">
+            <input placeholder="Email:">
+            <textarea placeholder="Message:"></textarea>
+            <button>SEND MESSAGE</button>
+        </section>
+
+            <section class="contact-information">
+                <h2>Contact information</h2>
+                <section class="horizontally-aligned">
+                    <img src="img/call.png" alt="white phone icon">
+                    <p>12 345 678</p>
+                </section>
+                <section class="horizontally-aligned">
+                    <img src="img/email.png" alt="white email icon">
+                    <p>RainyDays@hotmail.com</p>
+                </section>
+                <img src="img/tiktok.png" alt="tik tok icon that is black with a white musical note">
+                <img src="img/twitter.png" alt="twitter icon that is a blue bird">
+                <img src="img/instagram.png" alt="pink and yellow instagram icon">
+            </section>
+    </main>
+
+    <footer class="site-footer">
+        <section class="footer-content">
+            <section class="logo">
+                <img src="img/logo.png" alt="white logo with mountains at the top, rainy days text in capital letters in the middle
+                and the text: Pushing the comfort zone, underneath">
+            </section>
+
+            <section class="membership">
+                <h3>Become a member</h3>
+                <p>Sign up for our newsletter and<br>get special offers and discounts<br></p>
+                <section class="signup-container">
+                    <input placeholder="Email:">
+                    <button>Sign Up</button>
+                </section>
+            </section>
+
+            <nav class="social-icons">
+                <a href="#"><img src="img/instagram.png" alt="pink and yellow instagram icon"></a>
+                <a href="#"><img src="img/twitter.png" alt="twitter icon that is a blue bird"></a>
+                <a href="#"><img src="img/tiktok.png" alt="tik tok icon that is black with a white musical note"></a>
+            </nav>
+        </section>
+    </footer>
+</body>
+
+</html>

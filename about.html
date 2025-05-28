@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Our team consist of six members who specialize 
+    in different fields. We are a group of friends who always wanted to make good and
+    substainable jackets for our outdoor experience. We are passionate about nature and 
+    environment and are therefor comitted to making the jackets as substainable as possible.">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Ida Nøkland">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about.css">
+    <script defer src="about.js"></script>
+    <title>About page</title>
+</head>
+
+<body>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <header class="small-header">
+        <P>BIG WINTER SALE!</P>
+        <P>UP TO 50% DISCOUNT</P>
+        <P>SALE ENDS 29TH OF FEBRUARY</P>
+    </header>
+
+    <header>
+        <a href="index.html">
+            <section class="logo">
+                <img src="img/logo.png" alt="blue logo with mountains at the top, rainy days text in capital letters in the middle
+                and the text: Pushing the comfort zone, underneath">
+            </section>
+        </a>
+
+        <section class="bar-container">
+            <a href="checkout.html">
+                <section class="shopping-cart">
+                    <img src="img/shopping-cart.png" alt="hollow black shopping bag icon">
+                </section>
+            </a>
+
+            <nav id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <nav class="overlay-content">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="document.html">Document</a>
+                </nav>
+            </nav>
+
+            <span class="menu-icon" onclick="openNav()">&#9776;</span>
+
+            <script src="script.js"></script>
+        </section>
+    </header>
+
+    <hr class="header-line">
+    <main class="content"></main>
+
+
+    <main class="main-content">
+
+        <section class="our-team">
+            <h2>MEET OUR TEAM</h2>
+            <section class="slideshow-container">
+                <section class="mySlides fade">
+                    <section class="numbertext">1 / 6</section>
+                    <img src="img/elsa.jpg" style="width:100%">
+                    <section class="text">Elsa Aakervik</section>
+                </section>
+
+                <section class="mySlides fade">
+                    <section class="numbertext">2 / 6</section>
+                    <img src="img/sofie.jpg" style="width:100%">
+                    <section class="text">Sofie Nordskog Haugen</section>
+                </section>
+
+                <section class="mySlides fade">
+                    <section class="numbertext">3 / 6</section>
+                    <img src="img/nora.jpg" style="width:100%">
+                    <section class="text">Nora Omland</section>
+                </section>
+
+                <section class="mySlides fade">
+                    <section class="numbertext">4 / 6</section>
+                    <img src="img/sivert.jpg" style="width:100%">
+                    <section class="text">Sivert Lysgård</section>
+                </section>
+
+                <section class="mySlides fade">
+                    <section class="numbertext">5 / 6</section>
+                    <img src="img/aurora.jpg" style="width:100%">
+                    <section class="text">Aurora Jespersen</section>
+                </section>
+
+                <section class="mySlides fade">
+                    <section class="numbertext">6 / 6</section>
+                    <img src="img/siri.jpg" style="width:100%">
+                    <section class="text">Siri Granås Bakken</section>
+                </section>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </section>
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+
+            <p>Our team consists of six unique members
+                who specialize in different fields.
+                Elsa is our ceo and also our financial controller.
+                Sofie is our marketing manager who handles all
+                advertising and social media. Nora and Sivert is
+                our market researcher and designer. They also
+                communicate and engage with the factories. Aurora
+                is a photographer and takes all the photos for our
+                website and social media. Siri is our tech
+                managers and is in charge of all IT services and
+                manage our website.
+            </p>
+            </div>
+
+            <section class="our-story">
+            <img src="img/our-story3.jpg" alt="black wall with the white text: dream big. in capital letters."
+                class="story-image">
+            <h2>OUR STORY</h2>
+            <p>We are a group of good friends who always
+                wanted to make good and sustainable jackets
+                for our outdoor adventures. We share a lot of
+                interests, such as: hiking, rafting, skiing, camping,
+                canoeing and exploring nature. Outdoor clothing is
+                therefor very important to us and we are passionate
+                about sharing our products with the world for a better
+                outdoor experience. The environment is something we
+                all really cares about and we always had a goal to make
+                the jackets as sustainable as possible.
+            </p>
+        </section>
+
+        <section class="our-focus">
+        <img src="img/our-focus7.jpg" alt="picture of the sky, trees, mountains and ocean" class="focus-image">
+        <h2>OUR FOCUS</h2>
+        <p>Fast fashion is growing faster then ever and comes
+            with an astonishing environmental and social cost.
+            We in Rainydays are therefor committed to making
+            the jackets as sustainable as possible. The material
+            is made out of recycled materials and uses biodegradable
+            components from recycled fibers. These materials grow
+            with no pesticide or fertilizer, consume less energy
+            and water, and employ no chemical treatment, thus reducing
+            the overall carbon footprint. We also use fabrics that
+            specializes in sustainable clothes. These fabrics are
+            also local so that we can meet with the producer without
+            having to travel by plane. We are determent to do what we
+            can for a more sustainable world.
+        </p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <section class="footer-content">
+            <section class="logo">
+                <img src="img/logo.png" alt="white logo with mountains at the top, rainy days text in capital letters in the middle
+                and the text: Pushing the comfort zone, underneath">
+            </section>
+
+            <section class="membership">
+                <h3>Become a member</h3>
+                <p>Sign up for our newsletter and<br>get special offers and discounts<br></p>
+                <section class="signup-container">
+                    <input placeholder="Email:">
+                    <button>Sign Up</button>
+                </section>
+            </section>
+
+            <nav class="social-icons">
+                <a href="#"><img src="img/instagram.png" alt="pink and yellow instagram icon"></a>
+                <a href="#"><img src="img/twitter.png" alt="twitter icon that is a blue bird"></a>
+                <a href="#"><img src="img/tiktok.png" alt="tik tok icon that is black with a white musical note"></a>
+            </nav>
+        </section>
+    </footer>
+</body>
+
+</html>

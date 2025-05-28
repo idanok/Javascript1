@@ -1,0 +1,484 @@
+@import url("global.css");
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+/* Shopping cart */
+.shopping-cart img {
+    text-decoration: none;
+    color: #000000;
+    margin: 6px 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.shopping-cart img:hover {
+    transform: scale(1.5);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .shopping-cart img {
+        width: 30px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .shopping-cart img {
+        width: 35px;
+    }
+}
+
+.bar-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+
+/* Hamburger menu */
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay {
+        overflow-y: auto;
+    }
+
+    .overlay a {
+        font-size: 20px
+    }
+
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .menu-icon {
+        font-size: 35px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .menu-icon {
+        font-size: 40px;
+    }
+}
+
+/* Header line */
+.header-line {
+    background-color: #697F8C;
+    height: 2px;
+}
+
+
+
+/* Content section */
+.content-section {
+    margin-top: -600px;
+    margin-bottom: 100px;
+    display: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-section .section-item-1 [src*="/img/m83-jacket.jpg"] {
+    display: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 350px;
+    height: 400px;
+    margin-left: 100px;
+}
+
+.content-section .section-item-1 h2 {
+    font-size: 25px;
+    margin-left: 100px;
+}
+
+.section-item-1 p {
+    font-size: 15px;
+    margin-left: 100px;
+    color: black;
+}
+
+.red {
+    color: red;
+    font-size: 17px;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.extra-info {
+    font-size: 14px;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+
+.black {
+    color: #000000;
+    font-size: 15px;
+}
+
+.content-section .section-item-2 p {
+    color: red;
+    margin-top: 40px;
+    font-size: 13px;
+    margin-left: 100px;
+}
+
+.section-item-2 button {
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000000;
+    border: 1px solid #000000;
+    width: 45px;
+    font-size: 10px;
+    padding: 6px 10px;
+}
+
+.size-buttons {
+    padding: 10px 100px;
+    margin-bottom: 20px;
+}
+
+a.add-to-cart-button {
+    background-color: #4CAF50;;
+    color: #fff;
+    border-radius: 5px;
+    margin-right: 20px;
+    border: none;
+    margin-top: 50px;
+    padding: 8px 10px;
+    font-size: 12px;
+    margin-left: 100px;
+}
+
+.section-item-2 button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.add-to-cart-button:hover {
+    text-decoration: underline;
+    background-color: #45a049;
+}
+
+.section-item-3 img {
+    background-color: #fff;
+    color: #000000;
+    padding: 3px 3px;
+    padding: 1px 1px;
+    margin-left: 10px;
+    width: 18px;
+}
+
+.section-item-3 img:hover {
+    transform: scale(1.2);
+}
+
+.section-item-4 p {
+    font-size: 15px;
+    line-height: 20px;
+    width: 350px;
+    margin-left: 100px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.section-item-5 p {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    font-size: 12px;
+    margin-left: 100px;
+}
+
+.section-item-5 img {
+    width: 20px;
+}
+
+.section-item-5 img:hover {
+    transform: scale(1.2);
+}
+
+.horizontally-aligned-1,
+.horizontally-aligned-2,
+.horizontally-aligned-3 {
+    display: flex;
+    align-items: center;
+}
+
+.horizontally-aligned-1 {
+    gap: 220px;
+}
+
+.horizontally-aligned-2 {
+    gap: 207px;
+}
+
+.horizontally-aligned-3 {
+    gap: 118px;
+    margin-bottom: 50px;
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .content-section .section-item-1 [src*="/img/m83-jacket.jpg"] {
+        width: 450px;
+        height: 500px;
+        margin-left: 200px;
+    }
+
+    .content-section .section-item-1 h2 {
+        font-size: 30px;
+        margin-left: 200px;
+        margin-top: 40px;
+    }
+
+    .section-item-1 p {
+        font-size: 18px;
+        margin-left: 200px;
+    }
+    
+    .red {
+        font-size: 20px;
+    }
+    
+    .extra-info {
+        font-size: 18px;
+        margin-top: 50px;
+        margin-left: 200px;
+    }
+
+    .black {
+        color: #000000;
+        font-size: 18px;
+    }
+
+    .content-section .section-item-2 p {
+        font-size: 15px;
+        margin-left: 200px;
+        margin-top: 60px;
+    }
+
+    .section-item-2 button {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .size-buttons {
+        padding: 10px 100px;
+        margin-bottom: 40px;
+        margin-left: 100px;
+    }
+
+    a.add-to-cart-button {
+        padding: 8px 10px;
+        font-size: 15px;
+        margin-left: 200px;
+    }
+
+    .section-item-3 img {
+        padding: 1px 1px;
+        margin-left: 10px;
+        width: 20px;
+    }
+
+    .section-item-4 p {
+        font-size: 20px;
+        line-height: 25px;
+        width: 500px;
+        margin-left: 200px;
+        margin-bottom: 70px;
+    }
+
+    .section-item-5 p {
+        font-size: 15px;
+        margin-left: 200px;
+    }
+
+    .section-item-5 img {
+        width: 25px;
+    }
+
+    .horizontally-aligned-1 {
+        gap: 350px;
+    }
+
+    .horizontally-aligned-2 {
+        gap: 332px;
+    }
+
+    .horizontally-aligned-3 {
+        gap: 220px;
+        margin-bottom: 100px;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .content-section .section-item-1 [src*="/img/m83-jacket.jpg"] {
+        width: 550px;
+        height: 600px;
+        margin-left: 300px;
+    }
+
+    .content-section .section-item-1 h2 {
+        font-size: 40px;
+        margin-left: 300px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+    }
+
+    .section-item-1 p {
+        font-size: 20px;
+        margin-left: 300px;
+    }
+    
+    .red {
+        font-size: 25px;
+    }
+    
+    .extra-info {
+        font-size: 20px;
+        margin-top: 80px;
+        margin-left: 300px;
+        margin-bottom: 100px;
+    }
+
+    .black {
+        color: #000000;
+        font-size: 15px;
+    }
+
+    .content-section .section-item-2 p {
+        font-size: 16px;
+        margin-left: 300px;
+    }
+
+    .section-item-2 button {
+        font-size: 15px;
+        padding: 8px 15px;
+        width: 70px;
+    }
+
+    .size-buttons {
+        padding: 10px 100px;
+        margin-bottom: 80px;
+        margin-left: 200px;
+    }
+
+    a.add-to-cart-button {
+        padding: 10px 12px;
+        font-size: 18px;
+        margin-left: 300px;
+    }
+
+    .section-item-3 img {
+        padding: 1px 1px;
+        margin-left: 10px;
+        width: 22px;
+    }
+
+    .section-item-4 p {
+        font-size: 22px;
+        line-height: 30px;
+        width: 500px;
+        margin-left: 300px;
+        margin-bottom: 120px;
+    }
+
+    .section-item-5 p {
+        font-size: 18px;
+        margin-left: 300px;
+    }
+
+    .section-item-5 img {
+        width: 28px;
+    }
+
+    .horizontally-aligned-1 {
+        gap: 400px;
+    }
+
+    .horizontally-aligned-2 {
+        gap: 380px;
+    }
+
+    .horizontally-aligned-3 {
+        gap: 245px;
+        margin-bottom: 80px;
+    }
+}
+
+
