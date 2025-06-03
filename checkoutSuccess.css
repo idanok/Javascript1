@@ -1,265 +1,71 @@
 @import url("global.css");
 
-html,
 body {
-    height: 100%;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f8f8;
+    color: #333;
 }
 
-
-/* Shopping cart */
-.shopping-cart img {
-    text-decoration: none;
-    color: #000000;
-    margin: 6px 25px;
-    width: 25px;
-}
-
-.shopping-cart img:hover {
-    transform: scale(1.5);
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .shopping-cart img {
-        width: 30px;
-    }
-}
-
-@media (min-width: 1025px) {
-    .shopping-cart img {
-        width: 35px;
-    }
-}
-
-.bar-container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 20px;
-}
-
-
-/* Hamburger menu */
-body {
-    font-family: 'Lato', sans-serif;
-}
-
-.overlay {
-    height: 0%;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.9);
-    overflow-y: hidden;
-    transition: 0.5s;
-}
-
-.overlay-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-}
-
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.overlay a:hover,
-.overlay a:focus {
-    color: #f1f1f1;
-}
-
-.overlay .closebtn {
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 60px;
-}
-
-@media screen and (max-height: 450px) {
-    .overlay {
-        overflow-y: auto;
-    }
-
-    .overlay a {
-        font-size: 20px
-    }
-
-    .overlay .closebtn {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-    }
-}
-
-.menu-icon {
-    font-size: 30px;
-    cursor: pointer;
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .menu-icon {
-        font-size: 35px;
-    }
-}
-
-@media (min-width: 1025px) {
-    .menu-icon {
-        font-size: 40px;
-    }
-}
-
-/* Header line */
-.header-line {
-    background-color: #697F8C;
-    color: #fff;
-    padding: 2px;
-}
-
-
-/* Main content */
 .main-content {
-    text-align: center;
-    background-color: #fff;
-    padding: 200px;
-    border: 5px solid #697F8C;
-    border-radius: 5px;
-    margin-top: 100px;
-    margin-bottom: -500px;
-    margin-left: 100px;
-    margin-right: 100px;
-    height: 10vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    max-width: 480px;
+    background-color: white;
+    margin: 3rem auto 6rem;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     text-align: center;
 }
 
 .main-content img {
-    margin-bottom: 50px;
     width: 80px;
+    margin-bottom: 1.5rem;
 }
 
 .main-content h1 {
-    font-size: 15px;
-    color: #000000;
-    margin-top: 3px;
-    border-bottom: 1px solid #697F8C;
-    width: 240px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #697F8C;
+    padding-bottom: 0.5rem;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .main-content p {
-    font-size: 16px;
-    color: #333;
-    width: 300px;
-    text-align: left;
-    margin-top: 30px;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
 }
 
 .centered p {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 15px;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: #37475a;
+    font-weight: 600;
 }
 
 .main-content button {
-    width: 130px;
-    height: 30px;
-    margin-top: 40px;
     background-color: #697F8C;
-    border-radius: 5px;
     border: none;
-    color: #fff;
-    font-size: 10px;
-}
-
-.main-content button:hover {
-    text-decoration: underline;
+    border-radius: 30px;
+    color: white;
+    font-size: 1rem;
+    padding: 12px 30px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(105, 127, 140, 0.4);
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-    .main-content {
-        border: 8px solid #697F8C;
-        padding: 300px;
-    }
-
-    .main-content img {
-        width: 120px;
-        margin-top: 40px;
-    }
-
-    .main-content h1 {
-        font-size: 20px;
-        width: 350px;
-        border-bottom: 2px solid #697F8C;
-        width: 320px;
-        margin-top: 30px;
-    }
-
-    .main-content p {
-        font-size: 20px;
-        width: 400px;
-        line-height: 2;
-    }
-
-    .centered p {
-        font-size: 20px;
-    }
-
-    .main-content button {
-        width: 150px;
-        height: 40px;
-        font-size: 12px;
-    }
-}
-
-@media (min-width: 1025px) {
-    .main-content {
-        border: 10px solid #697F8C;
-        padding: 400px;
-    }
-
-    .main-content img {
-        width: 150px;
-        margin-top: 20px;
-    }
-
-    .main-content h1 {
-        font-size: 25px;
-        width: 400px;
-        border-bottom: 2px solid #697F8C;
-        width: 400px;
-        margin-top: 50px;
-    }
-
-    .main-content p {
-        font-size: 20px;
-        width: 500px;
-        line-height: 2;
-    }
-
-    .centered p {
-        font-size: 20px;
-    }
-
-    .main-content button {
-        width: 160px;
-        height: 40px;
-        font-size: 15px;
-        margin-top: 80px;
-    }
+.main-content button:hover,
+.main-content button:focus {
+    background-color: #526973;
+    outline: none;
+    text-decoration: none;
 }

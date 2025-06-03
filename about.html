@@ -3,20 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Our team consist of six members who specialize 
-    in different fields. We are a group of friends who always wanted to make good and
-    substainable jackets for our outdoor experience. We are passionate about nature and 
-    environment and are therefor comitted to making the jackets as substainable as possible.">
+    <meta name="description" content="Meet our team and read about our story and focus.">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Ida Nøkland">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="about.css">
-    <script defer src="about.js"></script>
     <title>About page</title>
 </head>
 
 <body>
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
     <header class="small-header">
         <P>BIG WINTER SALE!</P>
         <P>UP TO 50% DISCOUNT</P>
@@ -31,12 +26,18 @@
             </section>
         </a>
 
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒<span id="cart-count">0</span>
+        </div>
+
+        <div id="cart-dropdown" class="cart-dropdown hidden">
+            <h3>Your Cart</h3>
+            <ul id="cart-items"></ul>
+            <p id="cart-total"></p>
+            <button id="checkout-button">Go to Checkout</button>
+        </div>
+
         <section class="bar-container">
-            <a href="checkout.html">
-                <section class="shopping-cart">
-                    <img src="img/shopping-cart.png" alt="hollow black shopping bag icon">
-                </section>
-            </a>
 
             <nav id="myNav" class="overlay">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -50,13 +51,12 @@
 
             <span class="menu-icon" onclick="openNav()">&#9776;</span>
 
-            <script src="script.js"></script>
         </section>
     </header>
 
     <hr class="header-line">
-    <main class="content"></main>
 
+    <main class="content"></main>
 
     <main class="main-content">
 
@@ -127,40 +127,40 @@
             </div>
 
             <section class="our-story">
-            <img src="img/our-story3.jpg" alt="black wall with the white text: dream big. in capital letters."
-                class="story-image">
-            <h2>OUR STORY</h2>
-            <p>We are a group of good friends who always
-                wanted to make good and sustainable jackets
-                for our outdoor adventures. We share a lot of
-                interests, such as: hiking, rafting, skiing, camping,
-                canoeing and exploring nature. Outdoor clothing is
-                therefor very important to us and we are passionate
-                about sharing our products with the world for a better
-                outdoor experience. The environment is something we
-                all really cares about and we always had a goal to make
-                the jackets as sustainable as possible.
-            </p>
-        </section>
+                <img src="img/our-story3.jpg" alt="black wall with the white text: dream big. in capital letters."
+                    class="story-image">
+                <h2>OUR STORY</h2>
+                <p>We are a group of good friends who always
+                    wanted to make good and sustainable jackets
+                    for our outdoor adventures. We share a lot of
+                    interests, such as: hiking, rafting, skiing, camping,
+                    canoeing and exploring nature. Outdoor clothing is
+                    therefor very important to us and we are passionate
+                    about sharing our products with the world for a better
+                    outdoor experience. The environment is something we
+                    all really cares about and we always had a goal to make
+                    the jackets as sustainable as possible.
+                </p>
+            </section>
 
-        <section class="our-focus">
-        <img src="img/our-focus7.jpg" alt="picture of the sky, trees, mountains and ocean" class="focus-image">
-        <h2>OUR FOCUS</h2>
-        <p>Fast fashion is growing faster then ever and comes
-            with an astonishing environmental and social cost.
-            We in Rainydays are therefor committed to making
-            the jackets as sustainable as possible. The material
-            is made out of recycled materials and uses biodegradable
-            components from recycled fibers. These materials grow
-            with no pesticide or fertilizer, consume less energy
-            and water, and employ no chemical treatment, thus reducing
-            the overall carbon footprint. We also use fabrics that
-            specializes in sustainable clothes. These fabrics are
-            also local so that we can meet with the producer without
-            having to travel by plane. We are determent to do what we
-            can for a more sustainable world.
-        </p>
-        </section>
+            <section class="our-focus">
+                <img src="img/our-focus7.jpg" alt="picture of the sky, trees, mountains and ocean" class="focus-image">
+                <h2>OUR FOCUS</h2>
+                <p>Fast fashion is growing faster then ever and comes
+                    with an astonishing environmental and social cost.
+                    We in Rainydays are therefor committed to making
+                    the jackets as sustainable as possible. The material
+                    is made out of recycled materials and uses biodegradable
+                    components from recycled fibers. These materials grow
+                    with no pesticide or fertilizer, consume less energy
+                    and water, and employ no chemical treatment, thus reducing
+                    the overall carbon footprint. We also use fabrics that
+                    specializes in sustainable clothes. These fabrics are
+                    also local so that we can meet with the producer without
+                    having to travel by plane. We are determent to do what we
+                    can for a more sustainable world.
+                </p>
+            </section>
     </main>
 
     <footer class="site-footer">
@@ -186,6 +186,8 @@
             </nav>
         </section>
     </footer>
+
+    <script defer src="about.js"></script>
 </body>
 
 </html>

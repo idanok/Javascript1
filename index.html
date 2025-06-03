@@ -3,18 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Looking for rain jackets? We have jackets that are designes for 
-    a range of different outdoor activities that enrich people's lives!">
+    <meta name="description" content="Discover our quality and price-friendly rain jackets.">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Ida Nøkland">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="home.css">
-    <script defer src="index.js"></script>
     <title>Home page</title>
 </head>
 
 <body>
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
     <header class="small-header">
         <P>BIG WINTER SALE!</P>
         <P>UP TO 50% DISCOUNT</P>
@@ -29,15 +26,18 @@
             </section>
         </a>
 
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒<span id="cart-count">0</span>
+        </div>
+
+        <div id="cart-dropdown" class="cart-dropdown hidden">
+            <h3>Your Cart</h3>
+            <ul id="cart-items"></ul>
+            <p id="cart-total"></p>
+            <button id="checkout-button">Go to Checkout</button>
+        </div>
+
         <section class="bar-container">
-            <a href="checkout.html">
-                <section class="shopping-cart">
-                    <img src="img/shopping-cart.png" alt="hollow black shopping bag icon">
-                    <span id="cart-item-count">0</span>
-                </section>
-            </a>
-
-
 
             <nav id="myNav" class="overlay">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -54,15 +54,6 @@
         </section>
     </header>
 
-
-    <div class="cart-items">
-        <h2>Shopping Bag</h2>
-        <div class="cart-item-container">
-        </div>
-        <div class="cart-total-price">Total Price: $0.00</div>
-        <button id="check-out-button">Check out</button>
-    </div>
-
     <section class="mountain-img">
         <img src="img/mountain-img.jpg" width="100%" alt="person in yellow rain jacket with green backpack standing
         on top of a mountain and looking down on the mountains with snow on top">
@@ -78,64 +69,43 @@
         </p>
     </section>
 
-    <div class="container">
-        <form class="filter">
-            <div class="item">
-                <label for="color">Color:</label>
-                <select name="color" id="color">
-                    <option value="">All</option>
-                    <option value="red">Red</option>
-                    <option value="blue">Blue</option>
-                    <option value="brown">Brown</option>
-                    <option value="green">Green</option>
-                    <option value="black">Black</option>
-                    <option value="purple">Purple</option>
-                </select>
-            </div>
+    <form class="filter">
+        <label for="gender">Filter by Gender:</label>
+        <select id="gender" name="gender">
+            <option value="all">All</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <button type="submit">Apply Filter</button>
+    </form>
 
-            <div class="item">
-                <label for="gender">Gender:</label>
-                <select name="gender" id="gender">
-                    <option value="all">All</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
+    <div id="product-container" class="product-grid"></div>
 
-            <div class="item submit">
-                <button type="submit">Apply Filter</button>
-            </div>
-        </form>
-    </div>
-
-        <div id="product-container" class="product-grid"></div>
-
-        <footer class="site-footer">
-            <section class="footer-content">
-                <section class="logo">
-                    <img src="img/logo.png" alt="white logo with mountains at the top, rainy days text in capital letters in the middle
+    <footer class="site-footer">
+        <section class="footer-content">
+            <section class="logo">
+                <img src="img/logo.png" alt="white logo with mountains at the top, rainy days text in capital letters in the middle
                     and the text: Pushing the comfort zone, underneath">
-                </section>
-
-                <section class="membership">
-                    <h3>Become a member</h3>
-                    <p>Sign up for our newsletter and<br>get special offers and discounts<br></p>
-                    <section class="signup-container">
-                        <input placeholder="Email:">
-                        <button>Sign Up</button>
-                    </section>
-                </section>
-
-                <nav class="social-icons">
-                    <a href="#"><img src="img/instagram.png" alt="pink and yellow instagram icon"></a>
-                    <a href="#"><img src="img/twitter.png" alt="twitter icon that is a blue bird"></a>
-                    <a href="#"><img src="img/tiktok.png"
-                            alt="tik tok icon that is black with a white musical note"></a>
-                </nav>
             </section>
-        </footer>
 
+            <section class="membership">
+                <h3>Become a member</h3>
+                <p>Sign up for our newsletter and<br>get special offers and discounts<br></p>
+                <section class="signup-container">
+                    <input placeholder="Email:">
+                    <button>Sign Up</button>
+                </section>
+            </section>
 
+            <nav class="social-icons">
+                <a href="#"><img src="img/instagram.png" alt="pink and yellow instagram icon"></a>
+                <a href="#"><img src="img/twitter.png" alt="twitter icon that is a blue bird"></a>
+                <a href="#"><img src="img/tiktok.png" alt="tik tok icon that is black with a white musical note"></a>
+            </nav>
+        </section>
+    </footer>
+
+    <script defer src="index.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,3 @@
-
 // Hamburger menu
 function openNav() {
     document.getElementById("myNav").style.height = "100%";
@@ -8,39 +7,35 @@ function closeNav() {
     document.getElementById("myNav").style.height = "0%";
 }
 
+// API and DOM elements
 const apiURL = 'https://api.noroff.dev/api/v1/rainy-days';
 const productContainer = document.getElementById('product-container');
 const filterForm = document.querySelector('.filter');
 
-// Initial fetch
 fetchAllProducts();
 
-// Handle filter form submission
+// Filter functionality
 filterForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    const selectedColor = document.getElementById('color').value;
-    const selectedGender = document.getElementById('gender').value;
+    const selectedGender = document.getElementById('gender').value.toLowerCase();
 
     fetch(apiURL)
         .then(response => response.json())
         .then(products => {
-            let filteredProducts = products;
-
-            if (selectedColor && selectedColor !== "all") {
-                filteredProducts = filteredProducts.filter(product =>
-                    product.color.toLowerCase() === selectedColor.toLowerCase()
+            let filteredProducts;
+            if (selectedGender === "all") {
+                filteredProducts = products;
+            } else {
+                filteredProducts = products.filter(product =>
+                    product.gender && product.gender.toLowerCase() === selectedGender
                 );
             }
-
-            if (selectedGender && selectedGender !== "all") {
-                filteredProducts = filteredProducts.filter(product =>
-                    product.gender.toLowerCase() === selectedGender.toLowerCase()
-                );
-            }
-
             displayProducts(filteredProducts);
         })
-        .catch(error => console.error('Filter error:', error));
+        .catch(error => {
+            console.error('Filter error:', error);
+            productContainer.innerHTML = "<p>Could not load products. Please try again later.</p>";
+        });
 });
 
 function fetchAllProducts() {
@@ -49,7 +44,10 @@ function fetchAllProducts() {
         .then(products => {
             displayProducts(products);
         })
-        .catch(error => console.error('Fetch error:', error));
+        .catch(error => {
+            console.error('Fetch error:', error);
+            productContainer.innerHTML = "<p>Could not load products. Please try again later.</p>";
+        });
 }
 
 function displayProducts(products) {
@@ -63,107 +61,94 @@ function displayProducts(products) {
     products.forEach(product => {
         const productElement = document.createElement('div');
         productElement.className = 'product';
+
         productElement.innerHTML = `
-            <img src="${product.image}" alt="${product.title}">
-            <h3>${product.title}</h3>
-            <p>${product.description}</p>
-            <p>Price: $${product.price}</p>
-            <button><a href="jacketSpecific.html?id=${product.id}">View Detail</a></button>
-            <button onclick='addToCart(${JSON.stringify(product)})'>Add to Cart</button>
+        <img src="${product.image}" alt="${product.title}">
+        <h3>${product.title}</h3>
+        <p>${product.description}</p>
+        <p>Price: $${product.price}</p>
+        <button class="view-detail">View Detail</button>
+        <button class="add-to-cart">Add to Cart</button>
         `;
+
         productContainer.appendChild(productElement);
+
+        productElement.querySelector('.view-detail').addEventListener('click', () => {
+            window.location.href = `jacketSpecific.html?id=${product.id}`;
+        });
+
+        productElement.querySelector('.add-to-cart').addEventListener('click', () => {
+            addToCart(product);
+        });
     });
 }
 
-// Cart logic
-const cartItemsContainer = document.querySelector('.cart-items');
-const cartTotalPriceDisplay = document.querySelector('.cart-total-price');
-let cartItems = [];
-let cartItemCount = 0;
-
+// Cart functionality
 function addToCart(product) {
-    cartItemCount++;
-    document.getElementById('cart-item-count').textContent = cartItemCount;
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const existing = cart.find(item => item.id === product.id);
 
-    const existingItem = cartItems.find(item => item.title === product.title);
-
-    if (existingItem) {
-        existingItem.quantity++;
+    if (existing) {
+        existing.quantity += 1;
     } else {
-        cartItems.push({ ...product, quantity: 1 });
+        cart.push({ ...product, quantity: 1 });
     }
 
-    renderCart();
-    openPopup('Item Added', `${product.title} has been added to your cart!`);
-}
-
-function removeFromCart(title) {
-    const index = cartItems.findIndex(item => item.title === title);
-    if (index !== -1) {
-        cartItems.splice(index, 1);
-    }
+    localStorage.setItem("cart", JSON.stringify(cart));
     renderCart();
 }
 
-function updateCartItemQuantity(title, quantity) {
-    const item = cartItems.find(item => item.title === title);
-    item.quantity = parseInt(quantity);
-    renderCart();
+function removeFromCart(productId) {
+    if (confirm("Are you sure you want to remove this item from the cart?")) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart = cart.filter(item => item.id !== productId);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCart();
+    }
 }
 
 function renderCart() {
-    const cartItemContainer = document.querySelector('.cart-item-container');
-    cartItemContainer.innerHTML = '';
+    const cartItems = document.getElementById("cart-items");
+    const cartTotal = document.getElementById("cart-total");
+    const cartCount = document.getElementById("cart-count");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    let totalPrice = 0;
+    cartItems.innerHTML = "";
+    let total = 0;
+    let count = 0;
 
-    cartItems.forEach(item => {
-        const cartItemElement = document.createElement('div');
-        cartItemElement.classList.add('cart-item');
-        cartItemElement.innerHTML = `
-            <img src="${item.image}" alt="${item.title}" class="cart-item-image">
-            <div class="cart-item-details">
-                <span class="cart-item-title">${item.title}</span>
-                <span class="cart-item-price">$${item.price.toFixed(2)}</span>
-                <div class="cart-item-actions">
-                    <button class="btn btn-remove">Remove</button>
-                    <input class="cart-item-quantity" type="number" value="${item.quantity}" min="1">
-                </div>
-            </div>
+    cart.forEach(item => {
+        total += item.price * item.quantity;
+        count += item.quantity;
+
+        const li = document.createElement("li");
+        li.innerHTML = `
+        ${item.title} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}
+        <button onclick="removeFromCart('${item.id}')">Remove</button>
         `;
-
-        cartItemElement.querySelector('.btn-remove').addEventListener('click', () => removeFromCart(item.title));
-        cartItemElement.querySelector('.cart-item-quantity').addEventListener('change', (e) => updateCartItemQuantity(item.title, e.target.value));
-
-        cartItemContainer.appendChild(cartItemElement);
-        totalPrice += item.price * item.quantity;
+        cartItems.appendChild(li);
     });
 
-    cartTotalPriceDisplay.textContent = `$${totalPrice.toFixed(2)}`;
+    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
+    cartCount.textContent = count;
 }
 
-// Checkout redirection
-document.getElementById('check-out-button').addEventListener('click', function () {
-    const cartItemsHTML = document.querySelector('.cart-item-container').innerHTML;
-    window.location.href = 'checkoutSuccess.html?cartItems=' + encodeURIComponent(cartItemsHTML);
+function toggleCart() {
+    document.getElementById("cart-dropdown").classList.toggle("hidden");
+}
+
+document.addEventListener("DOMContentLoaded", renderCart);
+
+document.getElementById('checkout-button').addEventListener('click', () => {
+    window.location.href = 'checkout.html';
 });
 
-// Pop up logic
-function openPopup(title, message) {
-    const popup = document.createElement('div');
-    popup.classList.add('popup');
-    popup.innerHTML = `
-        <div class="popup-content">
-            <h2>${title}</h2>
-            <p>${message}</p>
-        </div>
-    `;
-    document.body.appendChild(popup);
-    setTimeout(() => closePopup(popup), 5000);
-    popup.addEventListener('click', () => closePopup(popup));
-}
-
-function closePopup(popup) {
-    document.body.removeChild(popup);
-}
-
+document.addEventListener('click', function (event) {
+    const cartDropdown = document.getElementById("cart-dropdown");
+    const cartIcon = document.querySelector(".cart-icon");
+    if (!cartDropdown.classList.contains("hidden") &&
+        !cartDropdown.contains(event.target) &&
+        !cartIcon.contains(event.target)) {
+        cartDropdown.classList.add("hidden");
+    }
+});

@@ -8,12 +8,10 @@
     <meta name="author" content="Ida Nøkland">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="document.css">
-    <script defer src="document.js"></script>
     <title>Document page</title>
 </head>
 
 <body>
-    <input type="checkbox" id="menu-toggle" class="menu-toggle">
     <header class="small-header">
         <P>BIG WINTER SALE!</P>
         <P>UP TO 50% DISCOUNT</P>
@@ -28,12 +26,18 @@
             </section>
         </a>
 
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒<span id="cart-count">0</span>
+        </div>
+
+        <div id="cart-dropdown" class="cart-dropdown hidden">
+            <h3>Your Cart</h3>
+            <ul id="cart-items"></ul>
+            <p id="cart-total"></p>
+            <button id="checkout-button">Go to Checkout</button>
+        </div>
+
         <section class="bar-container">
-            <a href="checkout.html">
-                <section class="shopping-cart">
-                    <img src="img/shopping-cart.png" alt="hollow black shopping bag icon">
-                </section>
-            </a>
 
             <nav id="myNav" class="overlay">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -47,7 +51,6 @@
 
             <span class="menu-icon" onclick="openNav()">&#9776;</span>
 
-            <script src="script.js"></script>
         </section>
     </header>
 
@@ -206,6 +209,8 @@
             </nav>
         </section>
     </footer>
+    
+    <script defer src="document.js"></script>
 </body>
 
 </html>
