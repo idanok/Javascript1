@@ -101,11 +101,13 @@ function addToCart(product) {
     renderCart();
 }
 
-function removeFromCart(productId, size) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart = cart.filter(item => !(item.id === productId && item.selectedSize === size));
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderCart();
+function removeFromCart(productId) {
+    if (confirm("Are you sure you want to remove this item from the cart?")) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart = cart.filter(item => item.id !== productId);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCart();
+    }
 }
 
 function renderCart() {
